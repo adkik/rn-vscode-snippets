@@ -1,0 +1,30 @@
+{
+  "FCwithUnistyles": {
+    "prefix": "fcu",
+    "body": [
+      "import React, { type ReactNode } from 'react';",
+      "import { View, type ViewProps } from 'react-native';",
+	  "import { StyleSheet } from 'react-native-unistyles';",
+      "",
+      "interface Props extends ViewProps {",
+      "  children?: ReactNode",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} = ({ children, style, ...rest }: Props) => {",
+      "  return (",
+      "    <View style={[styles.container, style]} {...rest}>",
+      "      {children}",
+      "    </View>",
+      "  );",
+      "};",
+      "",
+      "const styles = StyleSheet.create((_theme, rt) => ({",
+      "  container: {",
+      "    paddingTop: rt.insets.top",
+      "  },",
+      "}));"
+    ],
+	"description": "Typed React Native functional component with Unistyles. Includes a container View with style merging, children support, and a Unistyles StyleSheet with theme/runtime values.",
+	"scope": "typescriptreact"
+  },
+}
